@@ -47,7 +47,8 @@ client.on('chat', (channel, userstate, message, self) => {
 
  // Extra Life 2019 command
   else if (commandName === '!extralife' && channel === 'Rhelys') {
-    client.say('Rhelys', `Extra Life unites thousands of gamers to play games and heal kids by fundraising for local Children's Miracle Network Hospitals across North America. Check out my profile here! https://bit.ly/2N7BPzE`)
+    client.say('Rhelys', `Extra Life unites thousands of gamers to play games and heal kids by fundraising for local Children's Miracle Network Hospitals across North America. Check out my profile here! https://bit.ly/2N7BPzE`);
+    console.log(`* Executed ${commandName} command`);
   }
 });
 
