@@ -22,9 +22,10 @@ const opts = {
 // Create a client with our options
 const client = new tmi.client(opts);
 
-// Register our event handlers (defined below)
-// client.on('message', onMessageHandler);
-client.on('connected', onConnectedHandler);
+// Validating that we've connected to the Twitch Chat IRC
+client.on('connected', (address, port) {
+  console.log(`* Connected to ${addr}:${port}`);
+});
 
 // Connect to Twitch:
 client.connect();
@@ -44,15 +45,9 @@ client.on('chat', (channel, userstate, message, self) => {
     console.log(`* Executed ${commandName} command`);
   }
 
-
- // Extra Life 2019
+ // Extra Life 2019 command
   else if (commandName === '!extralife' && channel === 'Rhelys') {
     client.say('Rhelys', `Extra Life unites thousands of gamers to play games and heal kids by fundraising for local Children's Miracle Network Hospitals across North America. Check out my profile here! https://bit.ly/2N7BPzE`)
-  }
-
-
-  else {
-    console.log(`* Unknown command ${commandName}`);
   }
 });
 
@@ -60,9 +55,4 @@ client.on('chat', (channel, userstate, message, self) => {
 function rollDice () {
   const sides = 6;
   return Math.floor(Math.random() * sides) + 1;
-}
-
-// Called every time the bot connects to Twitch chat
-function onConnectedHandler (addr, port) {
-  console.log(`* Connected to ${addr}:${port}`);
 }
