@@ -23,8 +23,8 @@ const opts = {
 const client = new tmi.client(opts);
 
 // Validating that we've connected to the Twitch Chat IRC
-client.on('connected', (address, port) {
-  console.log(`* Connected to ${addr}:${port}`);
+client.on('connected', (address, port) => {
+  console.log(`* Connected to ${address}:${port}`);
 });
 
 // Connect to Twitch:
