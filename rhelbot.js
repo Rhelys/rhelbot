@@ -37,11 +37,20 @@ client.on('chat', (channel, userstate, message, self) => {
   if (self) return;
   const commandName = message.trim();
 
+  // Rolling a D6 dice
   if (commandName === '!dice') {
     const num = rollDice()
-    client.say(`Rhelys`, `${userstate['display-name']} rolled a ${num}`);
+    client.say(`${channel}`, `${userstate['display-name']} rolled a ${num}`);
     console.log(`* Executed ${commandName} command`);
   }
+
+
+ // Extra Life 2019
+  else if (commandName === '!extralife' && channel === 'Rhelys') {
+    client.say('Rhelys', `Extra Life unites thousands of gamers to play games and heal kids by fundraising for local Children's Miracle Network Hospitals across North America. Check out my profile here! https://bit.ly/2N7BPzE`)
+  }
+
+
   else {
     console.log(`* Unknown command ${commandName}`);
   }
