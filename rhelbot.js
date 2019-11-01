@@ -14,7 +14,8 @@ const opts = {
     debug: true,
   },
   channels: [
-    'Rhelys'
+    'Rhelys',
+    'Rhelbot'
   ]
 };
 
