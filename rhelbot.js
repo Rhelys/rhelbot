@@ -48,8 +48,18 @@ client.on('chat', (channel, userstate, message, self) => {
     console.log(`* Executed ${commandName} command`);
   }
 
+  else if (commandName === '!multiworld') {
+    client.say('rhelys', `Muliworld is a variant of Zelda: OoT Randomizer where items are scattered amongst the games of all connected players`);
+    console.log(`* Executed ${commandName} command`);
+  }
+
+  else if (commandName === '!players') {
+    client.say('rhelys', `https://www.multitwitch.tv/DCReptile/doctordrebin/eclipt/drnagi/rhelys/mistress_e/ninjasifi`);
+    console.log(`* Executed ${commandName} command`);
+  }
+
   else if (commandName === '!commands') {
-    client.say(`${channel}`, `Supported commands: !dice, !extralife`)
+    client.say(`${channel}`, `Supported commands: !dice, !extralife, !multiworld, !players`)
     console.log(`* Executed ${commandName} command`);
   }
 });
