@@ -54,7 +54,7 @@ client.on('chat', (channel, userstate, message, self) => {
   }
 
   else if (commandName === '!players') {
-    client.say('rhelys', `https://www.multitwitch.tv/DCReptile/doctordrebin/eclipt/drnagi/rhelys/mistress_e/ninjasifi`);
+    client.say('rhelys', `https://www.multitwitch.tv/DCReptile/doctordrebin/eclipt/drnagi/rhelys/mistress_e/ninjasifi/Wildwoodwaltz/th3swammi`);
     console.log(`* Executed ${commandName} command`);
   }
 
