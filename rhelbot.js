@@ -42,19 +42,8 @@ client.on('chat', (channel, userstate, message, self) => {
     console.log(`* Executed ${commandName} command`);
   }
 
- // Extra Life 2019 command
-  else if (commandName === '!extralife' && `${channel}` === '#rhelys') {
-    client.say('rhelys', `Extra Life unites thousands of gamers to play games and heal kids by fundraising for local Children's Miracle Network Hospitals across North America. Check out my profile here! https://bit.ly/2N7BPzE`);
-    console.log(`* Executed ${commandName} command`);
-  }
-
   else if (commandName === '!multiworld') {
     client.say('rhelys', `Muliworld is a variant of Zelda: OoT Randomizer where items are scattered amongst the games of all connected players`);
-    console.log(`* Executed ${commandName} command`);
-  }
-
-  else if (commandName === '!players') {
-    client.say('rhelys', `https://www.multitwitch.tv/DCReptile/doctordrebin/eclipt/drnagi/rhelys/mistress_e/ninjasifi/Wildwoodwaltz/th3swammi`);
     console.log(`* Executed ${commandName} command`);
   }
 
@@ -63,6 +52,14 @@ client.on('chat', (channel, userstate, message, self) => {
     console.log(`* Executed ${commandName} command`);
   }
 });
+
+
+// Handling Mod/PowerUser commands through Rhelbot
+client.on('chat', (channel, userstate, message, self) => {
+
+
+});
+
 
 /*
 Functions to be utilized in the bot's commands
