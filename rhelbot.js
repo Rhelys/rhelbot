@@ -32,7 +32,11 @@ client.on('connected', (address, port) => {
 
 // Running commands from the bot
 client.on('chat', (channel, userstate, message, self) => {
+
+  // Ignore self (the bot)
   if (self) return;
+
+  // Cleaning up any whitespace on the command that the user put in
   const commandName = message.trim();
 
   // Rolling a D6 dice
@@ -56,12 +60,8 @@ client.on('chat', (channel, userstate, message, self) => {
 
 // Handling Mod/PowerUser commands through Rhelbot
 client.on('chat', (channel, userstate, message, self) => {
-  if (`${userstate}['mod']` === true) {
-    console.log(`Debug - ${userstate['display-name']} is a mod`)
-  }
-  else {
-    console.log(`Debug - ${userstate['display-name']} is not a mod`)
-  }
+  if (self) return;
+  console.log(`Debug - ${userstate['display-name']}'s mod response is ${userstate['mod']}`)
 });
 
 
