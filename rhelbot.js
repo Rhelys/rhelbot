@@ -56,8 +56,12 @@ client.on('chat', (channel, userstate, message, self) => {
 
 // Handling Mod/PowerUser commands through Rhelbot
 client.on('chat', (channel, userstate, message, self) => {
-
-
+  if (`${userstate}['mod']` === true) {
+    console.log(`Debug - ${userstate['display-name']} is a mod`)
+  }
+  else {
+    console.log(`Debug - ${userstate['display-name']} is not a mod`)
+  }
 });
 
 
